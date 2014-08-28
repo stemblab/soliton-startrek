@@ -2,92 +2,96 @@
 
 <div id="text">
 
-<div id="left_col">
+  <div id="left_col">
 
-[http://en.wikipedia.org/wiki/Geordi_La_Forge Geordi La Forge] was right: 
-[http://en.wikipedia.org/wiki/Soliton solitons] *are* exciting---no matter 
-[http://www.youtube.com/watch?v=2BQT_iXVL28 what his colleagues may think].
+    [http://en.wikipedia.org/wiki/Geordi_La_Forge Geordi La Forge] was right: 
+    [http://en.wikipedia.org/wiki/Soliton solitons] *are* exciting---no matter 
+    [http://www.youtube.com/watch?v=2BQT_iXVL28 what his colleagues may think].
 
-A soliton is a pulse that experiences both nonlinearity
-and [http://en.wikipedia.org/wiki/Dispersion_(water_waves) dispersion]. 
-Nonlinearity sharpens the pulse---taller parts 
-travel faster than shorter parts (like a wave breaking on 
-a beach). Dispersion spreads it out---different frequencies travel at 
-different speeds. With a soliton the sharpening and spreading balance *exactly* 
-(and the balance is stable!).
+    A soliton is a pulse that experiences both nonlinearity and
+    [http://en.wikipedia.org/wiki/Dispersion_(water_waves)
+    dispersion].  Nonlinearity sharpens the pulse---taller parts
+    travel faster than shorter parts (like a wave breaking on a
+    beach). Dispersion spreads it out---different frequencies travel
+    at different speeds. With a soliton the sharpening and spreading
+    balance *exactly* (and the balance is stable!).
 
-Not that long ago the very idea that such order could exist in a nonlinear
-system was 
-[http://en.wikipedia.org/wiki/Fermi-Pasta-Ulam_problem new and unexpected].
-And the soliton has a further surprise.
-When two (or more) solitons collide they 
-interact nonlinearly, but eventually emerge unchanged. They appear
-to behave much like a particle (prot*on*, neutr*on* etc.).
+    Not that long ago the very idea that such order could exist in a
+    nonlinear system was
+    [http://en.wikipedia.org/wiki/Fermi-Pasta-Ulam_problem new and
+    unexpected].  And the soliton has a further surprise.  When two
+    (or more) solitons collide they interact nonlinearly, but
+    eventually emerge unchanged. They appear to behave much like a
+    particle (prot*on*, neutr*on* etc.).
+
+  </div>
+
+  <div id="right_col">
+
+    Solitons are a genuine wonder of the nonlinear world. Below you
+    can experiment with solitons of the
+    [http://en.wikipedia.org/wiki/Korteweg-de_Vries_equation KdV]
+    equation. Click in the grey box to
+    <span class="pz_text" ref="ic_note">initialize</span> the solitons
+    and run the
+    <span class="pz_text" ref="trefethen_note">simulation</span>.
+
+    Tall solitons experience more nonlinearity and so are faster and
+    narrower (for higher dispersion). Two solitons collide in
+    <span class="pz_text" ref="lax_note">different ways</span> according
+    to the ratio of their amplitudes.
+
+    While we use numerical methods here, true solutions are available
+    via the [http://en.wikipedia.org/wiki/Inverse_scattering_transform
+    Inverse Scattering Transform].  The IST is a *nonlinear analog of
+    the Fourier transform*, and one of the great advances of modern
+    mathematical physics.
+
+    Geordi was right: solitons are exciting---and perhaps just a little
+    weird as well.
+
+    <div class="pz_note" id="trefethen_note">
+
+      You are solving a nonlinear partial differential equation
+
+      $$
+      u_t+uu_x+u_{xxx}=0
+      $$
+
+      in your browser! The code is ported from
+      [http://people.maths.ox.ac.uk/trefethen/spectral.html
+      Trefethen's book].
+
+    </div>
+
+    <div class="pz_note" id="ic_note">
+
+      It's best if the pulses aren't too close together. The collision
+      of solitons is complex, and we haven't allowed for that with our
+      simple initial condition.
+
+    </div>
+
+    <div class="pz_note" id="lax_note">
+
+      When the ratio is high the larger soliton appears to absorb and
+      emit the smaller. But when the amplitudes are similar the
+      solitons seem to change positiion. There is also a third, more
+      subtle, regime as explored by
+      [https://archive.org/details/integralsofnonli00laxp Lax].
+
+    </div>
+
+  </div>
+
 </div>
 
-<div id="right_col">
-Solitons are a genuine wonder of the nonlinear world. Below you can experiment
-with solitons of the 
-[http://en.wikipedia.org/wiki/Korteweg-de_Vries_equation KdV]
-equation. Click in the grey box to 
-<span class="pz_text" ref="ic_note">initialize</span> 
-the solitons and run the
-<span class="pz_text" ref="trefethen_note">simulation</span>.
-
-Tall solitons experience more nonlinearity and so are faster and 
-narrower (for higher dispersion). Two solitons collide in
-<span class="pz_text" ref="lax_note">different ways</span> according to the
-ratio of their amplitudes. 
-
-While we use numerical methods here, true solutions are 
-available via the [http://en.wikipedia.org/wiki/Inverse_scattering_transform Inverse Scattering Transform].
-The IST is a *nonlinear analog of the Fourier transform*, and one of the great
-advances of modern mathematical physics.
-
-Geordi was right: solitons are exciting---and perhaps just a little
-weird as well.
-
-<div class="pz_note" id="trefethen_note">
-You are solving a nonlinear partial
-differential equation
-$$
-u_t+uu_x+u_{xxx}=0
-$$
-in your browser! The code is ported from 
-[http://people.maths.ox.ac.uk/trefethen/spectral.html Trefethen's book].
-</div>
-
-<div class="pz_note" id="ic_note">
-It's best if the pulses aren't too close together. The collision of
-solitons is complex, and we haven't allowed for that with our simple
-initial condition.
-</div>
-
-<div class="pz_note" id="lax_note">
-When the ratio is high the larger soliton appears to absorb and
-emit the smaller. But when the amplitudes are similar the solitons
-seem to change positiion. There is also a third, more subtle,
-regime as explored by 
-[https://archive.org/details/integralsofnonli00laxp Lax].
-</div>
-</div>
-
-</div>
 <div id="clear"></div>
 
 <div id="graph_container">
-    <div id="solitons"></div>
-    <div id="instruct">Click two coordinates to initialize solitons and restart simulation.</div>
-    <div id="ads">
-    Other blabs:
-    <a href="/m/b00cr" target="_blank">Web Lab</a> /
-    <a href="/m/b00dd" target="_blank">Visualization of Complex Functions</a> /
-    <a href="/m/b00cv" target="_blank">Compressive Sensing</a> /
-    <a href="/m/b00dz" target="_blank">Climate Change Mitigation</a>
-    </div>
 
-    
+  <div id="solitons"></div>
+  <div id="instruct">Click two coordinates to initialize solitons and restart simulation.</div>
+  
 </div>
-
-<!--puzlet_end--> (html)
 
