@@ -5,7 +5,7 @@
 
 # Set up grid
 N = 256
-dt = 0.8/N.pow(2)  # 0.4 in Trefethen
+dt = 0.4/N.pow(2)  # 0.4 in Trefethen
 x = 2*pi/N * linspace(-N/2, N/2-1, N)
 
 # Integrating factor
@@ -41,7 +41,6 @@ sech = (x) -> 2 / (exp(x) + exp(-x))
 soliton = (A, x1) ->
     3*A.pow(2) * (sech(.5*A*(x+x1))).pow(2)
     
-# Soliton graph (LineChart imported from another blab - see "Ext" section)
 lineChart = new $blab.LineChart
     id: "solitons"
     xLabel: "x"
@@ -52,13 +51,22 @@ lineChart = new $blab.LineChart
     yTicks: 5
     click: (x, y) -> initSoliton(x, y) 
 
-# Initial soliton plot
-count = 0
-u0 = null
+@kdv = new $blab.BasicAnimation
+    numSnapshots: 2000
+    delay: 10
+    strobeInterval: 10000
+    snapshotFunction: ->
+    strobeFunction: ->
+
+# Plot control
+count = 0 # number of solitons in plot
+u0 = null # initial condition
 initSoliton = (xS, yS) ->
-    $blab.stopAnimation()
+    @kdv.stopAnimation()
     count++
-    u0 = zeros(x) if count is 1
+    if count is 1
+        u0 = zeros(x)
+        @kdv.n = 0
     x1 = -xS
     A = sqrt(yS/3)
     u0 += soliton(A, x1)
@@ -69,17 +77,12 @@ initSoliton = (xS, yS) ->
 
 # Animated soliton plot
 animateSolitons = (u) ->
-    # Solve PDE and plot results.
-    # u: initial conditions
     v = fft u
-    snapshot = ->
+    @kdv.snapshotFunction = ->
         {u, v} = computeUV(v)
         lineChart.plot(x, u)
-    $blab.animate snapshot, 1000, 10
+    @kdv.animate()
     
 # Run: two solitons
 initSoliton(-1, 800)
-initSoliton(0, 200)  #;
-
-#!end (coffee)
-
+initSoliton(0, 200)
