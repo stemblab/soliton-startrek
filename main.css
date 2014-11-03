@@ -8,16 +8,17 @@ svg {
     margin: 0 auto;
 }
 
-#left_col {
+.left_col {
    float:left;
    width:450px;
 }
-#right_col {
+
+.right_col {
    float:right;
    width:450px;
 }
 
-#clear {
+.clear {
  clear:both;
 }
 
@@ -55,20 +56,6 @@ svg {
     font-size:24px;
 }
 
-#ads {
-    position: absolute;
-    width: 900px;
-    height: 40px;
-    bottom: 0px;
-    left: 30px;
-    background: white;
-    /*border: 1px dashed;*/
-    text-align: center;
-    font-size:14px;
-}
-
-
-
 .axis path, .axis line {
     fill: none;
     stroke: black;
@@ -78,53 +65,4 @@ svg {
 .axis text {
     font-family: sans-serif;
 }
-
-#blab_area {
-    /*margin: 0 0;*/
-    margin-top: 60px;
-    background: #eee;
-    margin-bottom: 30px;
-}
-
-#blabs {
-    width: 920px;
-    margin: 0 auto;
-    /*margin-top: 80px;*/  /* 15px? */
-    padding: 0px 50px 20px 50px;
-	text-align: left;
-	/*background: #eee;*/
-	/*border: 1px solid black;*/
-	/*border-radius: 10px;*/
-	line-height: 150%;
-	font-size: 11pt;
-    /*display: none;*/
-    padding: 20px;
-}
-
-.blab {
-    display: inline-block;
-    width: 290px;
-    text-align: center;
-    /*padding: 8px;
-    border-bottom: 1px solid #eee;*/
-}
-
-.blab img {
-	vertical-align: middle;
-    /*width: 200px;*/
-    max-width: 200px;
-    margin-bottom: 10px;
-    /*width: 70px;*/
-    /*max-height: 70px;*/
-}
-
-.blab a {
-    margin-top: 20px;
-	/*color: rgb(0, 0, 255);*/
-	/*cursor: pointer;*/
-    font-size: 11pt;
-	vertical-align: middle;
-}
-
-/*!end*/ (css)
 

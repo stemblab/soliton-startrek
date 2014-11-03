@@ -2,7 +2,9 @@
     "/puzlet/js/d3.min.js",
     "http://puzlet.org/line-chart/main.coffee",
     "http://puzlet.org/basic-animation/main.coffee",
+    "http://pdectb.github.io/kdv-etdrk4/step.coffee",
+    "http://pdectb.github.io/kdv/movie.coffee",
+    "main.coffee",
     "main.html",
-    "main.css",
-    "main.coffee"
+    "main.css"
 ]
